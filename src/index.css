@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Base resets & global styles - Linear/SaaS Theme
+   ============================================================ */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    /* Background: #F8FAFC, Primary Text: #111827 */
+    @apply bg-neutral-50 text-neutral-900 font-sans text-[15px] leading-relaxed;
+    min-height: 100dvh;
+  }
+
+  /* Typography Hierarchy Enforcements */
+  h1 {
+    @apply text-[32px] font-bold tracking-tight text-neutral-900 leading-tight;
+  }
+  h2 {
+    @apply text-[22px] font-semibold tracking-tight text-neutral-900 leading-snug;
+  }
+  
+  /* Remove default list styles when inside nav */
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Smooth focus rings */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent-500 ring-offset-2 ring-offset-neutral-50;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-300 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-400;
+  }
+}
+
+/* ============================================================
+   Component layer — reusable utility classes
+   ============================================================ */
+
+@layer components {
+  /* Page container (32px padding per specs) */
+  .page-container {
+    @apply max-w-7xl mx-auto p-[32px] space-y-[32px];
+  }
+
+  /* Data Table Component */
+  .data-table-container {
+    @apply bg-white border border-neutral-200 rounded-lg overflow-hidden;
+  }
+
+  .data-table {
+    @apply w-full text-left text-[15px] text-neutral-900 border-collapse;
+  }
+
+  .data-table thead tr {
+    @apply border-b border-neutral-200 bg-[#F9FAFB];
+  }
+
+  .data-table thead th {
+    /* Table Heading: 14px 600 */
+    @apply p-4 text-[14px] font-semibold text-neutral-700 whitespace-nowrap;
+  }
+
+  .data-table tbody tr {
+    @apply border-b border-neutral-200 hover:bg-[#F9FAFB] transition-colors last:border-b-0;
+  }
+
+  .data-table tbody td {
+    @apply p-4 align-middle;
+  }
+
+  /* ── Card Component ───────────────────────────────────────── */
+  /* Used throughout the user panel to ground content in white surfaces */
+  .card {
+    @apply bg-white border border-neutral-200 rounded-xl;
+  }
+
+  /* ── Stat Card ───────────────────────────────────────────── */
+  .stat-card {
+    @apply bg-white border border-neutral-200 rounded-xl p-5;
+  }
+
+  /* ── Section Header ─────────────────────────────────────── */
+  .section-header {
+    @apply flex items-center justify-between mb-3;
+  }
+
+  .section-title {
+    @apply text-[13px] font-semibold uppercase tracking-wide text-neutral-400;
+  }
+}
