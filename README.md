@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # HappyJourney — Vehicle Journey Booking System
 
 A full-stack fleet management and journey booking system built with React, Vite, Tailwind CSS, and Supabase. 
@@ -52,3 +53,6 @@ The system has been pre-seeded with dummy data, including an admin profile, vehi
 
 - **"Could not create your account" on Signup**: Ensure you have configured the correct `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` in the `.env` file. (Note: A typo in the URL was resolved; ensure you are using `https://bwulxmhxtknpedcyhhxt.supabase.co`).
 - **Email Confirmation**: If Supabase email confirmation is enabled on your project, you will need to click the link sent to your email to log in. To bypass this for local development, turn off **Confirm email** in your Supabase Auth settings.
+=======
+# HappyJourney
+>>>>>>> b44b8e74702d8ec6cbfd6dd2cd5c5d1af94b140e
